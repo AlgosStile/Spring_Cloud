@@ -5,9 +5,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
-
+/**
+ * Главный класс для запуска API Gateway.
+ */
 @SpringBootApplication
 public class CloudApplication {
+    /**
+     * Конфигурация маршрутов для API Gateway.
+     * Билдер для конфигурации маршрутов.
+     * @return Настроенный RouteLocator.
+     */
 
     public static void main(String[] args) {
         SpringApplication.run(CloudApplication.class, args);
