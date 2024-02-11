@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.http.ResponseEntity;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -14,6 +15,8 @@ public class CloudApplicationTests {
 
     @Autowired
     private TestRestTemplate restTemplate;
+    @Autowired
+    private RouteLocator routeLocator;
 
     @Test
     @DisplayName("integration test for interaction with app 1")
@@ -28,7 +31,8 @@ public class CloudApplicationTests {
         ResponseEntity<String> response = restTemplate.getForEntity("/serviceB/hello", String.class);
         assertEquals("Приветствую! Вы в приложении: App-2", response.getBody());
     }
-
 }
+
+
 
 

@@ -21,4 +21,6 @@ public class Microservize1ApplicationTests {
         ResponseEntity<String> response = restTemplate.getForEntity("/serviceA/hello", String.class);
         assertThat(response.getBody()).isEqualTo("Приветствую! Вы в приложении: App-1");
     }
+
+
 }
