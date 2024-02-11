@@ -53,18 +53,6 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.wiremock</groupId>-->
-<!--            <artifactId>wiremock</artifactId>-->
-<!--            <version>3.3.1</version>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.mock-server</groupId>-->
-<!--            <artifactId>mockserver-junit-jupiter</artifactId>-->
-<!--            <version>5.15.0</version>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
 
     </dependencies>
 
