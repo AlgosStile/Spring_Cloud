@@ -10,7 +10,7 @@ public class ApiController {
 
     @GetMapping("/hello")
     public String hello() {
-        return "Hello from Microservize-1";
+        return "Приветствую! Вы в приложении: App-1";
     }
 
 }
