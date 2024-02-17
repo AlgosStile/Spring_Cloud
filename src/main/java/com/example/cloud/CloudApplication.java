@@ -1,5 +1,6 @@
 package com.example.cloud;
 
+import com.example.cloud.conf.SingletonBean;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.gateway.route.RouteLocator;
@@ -10,11 +11,12 @@ import org.springframework.context.annotation.Bean;
  */
 @SpringBootApplication
 public class CloudApplication {
-    /**
-     * Конфигурация маршрутов для API Gateway.
-     * Билдер для конфигурации маршрутов.
-     * @return Настроенный RouteLocator.
-     */
+
+    private final SingletonBean singletonBean;
+
+    public CloudApplication() {
+        this.singletonBean = SingletonBean.getInstance();
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(CloudApplication.class, args);
@@ -23,9 +25,10 @@ public class CloudApplication {
     @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()
-                .route("Microservice1", r -> r.path("/serviceA/**")
+                .route("Microservice1", r -> r.path("/serviceA/")
                         .uri("http://localhost:8081/"))
-                .route("Microservice2", r -> r.path("/serviceB/**")
+                .route("Microservice2", r -> r.path("/serviceB/")
                         .uri("http://localhost:8082/")).build();
     }
 }
+
