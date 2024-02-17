@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Контроллер, отвечающий за обработку запросов к микросервису 1.
+ */
 @RestController
 @RequestMapping("/serviceA")
 public class ApiController {
@@ -17,6 +20,11 @@ public class ApiController {
     @Autowired
     private MessageChannel fileWriterChannel;
 
+    /**
+     * Обрабатывает GET-запросы на /hello и записывает информацию о запросе в файл.
+     *
+     * @return Приветственное сообщение от микросервиса 1.
+     */
     @GetMapping("/hello")
     public String hello() {
         Message<String> message = MessageBuilder.withPayload("User request: /hello").build();
