@@ -41,3 +41,8 @@ API Gateway слушает на порту 8761 и маршрутизирует 
 - Spring Boot
 - Spring Cloud Gateway
 - JUnit 5
+- Spring integration
+- Singleton
+- Eureka
+- Prometheus
+- Gateway
